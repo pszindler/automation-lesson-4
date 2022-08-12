@@ -42,7 +42,7 @@ public class Car {
                 .toList()
                 .stream()
                 .map(String::valueOf)
-                .collect(Collectors.joining(", c", "(",")"));
+                .collect(Collectors.joining(", ", "(",")"));
     }
 
     public static void printAllCarData(List<Car> cars) {
