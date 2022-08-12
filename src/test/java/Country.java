@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Country {
+public record Country(String countryName, char countrySign) {
 }
