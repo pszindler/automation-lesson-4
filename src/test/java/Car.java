@@ -39,9 +39,6 @@ public class Car {
         return "Car Market: " + getMarket().countryList()
                 .stream()
                 .map(country -> country.countryName() + " - " + country.countrySign())
-                .toList()
-                .stream()
-                .map(String::valueOf)
                 .collect(Collectors.joining(", ", "(",")"));
     }
 
@@ -51,10 +48,10 @@ public class Car {
         }
     }
 
-    public static List<Car> findBmwCarWithTrunkOver300(ArrayList<Car> allCars, int trunkCapacity, String carManufacturer) {
-        Predicate<Car> isProducerBMW = p -> p.getProducer().getModel().equals(carManufacturer);
+    public static List<Car> FindCarWithTrunkOverX(ArrayList<Car> allCars, int trunkCapacity, String carManufacturer) {
+        Predicate<Car> isProducerY = p -> p.getProducer().getModel().equals(carManufacturer);
         return allCars.stream()
-                .filter(isProducerBMW)
+                .filter(isProducerY)
                 .filter(Car::isAutomaticGear)
                 .filter(d -> d.getDimensions().stream().anyMatch(t -> t.getTrunkCapacity() > trunkCapacity))
                 .collect(Collectors.toList());
