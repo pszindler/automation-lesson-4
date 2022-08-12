@@ -38,7 +38,11 @@ public class Car {
     public String toString() {
         return "Car Market: " + getMarket().countryList()
                 .stream()
-                .map(x -> x.countryName() + "-" + x.countrySign()).toList();
+                .map(country -> country.countryName() + " - " + country.countrySign())
+                .toList()
+                .stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining(", c", "(",")"));
     }
 
     public static void printAllCarData(List<Car> cars) {
