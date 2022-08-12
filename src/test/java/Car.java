@@ -51,8 +51,8 @@ public class Car {
         }
     }
 
-    public static List<Car> findBmwCarWithTrunkOver300(ArrayList<Car> allCars, int trunkCapacity) {
-        Predicate<Car> isProducerBMW = p -> p.getProducer().getModel().equals("BMW");
+    public static List<Car> findBmwCarWithTrunkOver300(ArrayList<Car> allCars, int trunkCapacity, String carManufacturer) {
+        Predicate<Car> isProducerBMW = p -> p.getProducer().getModel().equals(carManufacturer);
         return allCars.stream()
                 .filter(isProducerBMW)
                 .filter(Car::isAutomaticGear)
