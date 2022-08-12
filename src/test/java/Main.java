@@ -4,7 +4,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Car> cars = generateAllNeededData();
-        Car.printAllCarData(Car.findBmwCarWithTrunkOver300(cars));
+        Car.printAllCarData(Car.findBmwCarWithTrunkOver300(cars, 299));
     }
 
     public static ArrayList<Car> generateAllNeededData() {

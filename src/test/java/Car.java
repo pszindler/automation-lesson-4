@@ -51,12 +51,12 @@ public class Car {
         }
     }
 
-    public static List<Car> findBmwCarWithTrunkOver300(ArrayList<Car> allCars) {
+    public static List<Car> findBmwCarWithTrunkOver300(ArrayList<Car> allCars, int trunkCapacity) {
         Predicate<Car> isProducerBMW = p -> p.getProducer().getModel().equals("BMW");
         return allCars.stream()
                 .filter(isProducerBMW)
                 .filter(Car::isAutomaticGear)
-                .filter(d -> d.getDimensions().stream().anyMatch(t -> t.getTrunkCapacity() > 299))
+                .filter(d -> d.getDimensions().stream().anyMatch(t -> t.getTrunkCapacity() > trunkCapacity))
                 .collect(Collectors.toList());
     }
 }
