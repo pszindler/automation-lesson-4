@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -41,13 +41,13 @@ public class Car {
                 .map(x -> x.countryName() + "-" + x.countrySign()).toList();
     }
 
-    public static void printAllCarData(List<Car> cars){
-        for (Object car: cars) {
+    public static void printAllCarData(List<Car> cars) {
+        for (Object car : cars) {
             System.out.println(car);
         }
     }
 
-    public static List<Car> findBmwCarWithTrunkOver300 (ArrayList<Car> allCars) {
+    public static List<Car> findBmwCarWithTrunkOver300(ArrayList<Car> allCars) {
         Predicate<Car> isProducerBMW = p -> p.getProducer().getModel().equals("BMW");
         return allCars.stream()
                 .filter(isProducerBMW)
