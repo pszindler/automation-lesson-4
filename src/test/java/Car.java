@@ -49,12 +49,12 @@ public class Car {
     }
 
     public static List<Car> FindCarWithTrunkOverX(ArrayList<Car> allCars, int trunkCapacity, String carManufacturer) {
-        Predicate<Car> isProducerY = p -> p.getProducer().getModel().equals(carManufacturer);
+        Predicate<Car> isProducerX = p -> p.getProducer().getModel().equals(carManufacturer);
         Predicate<Car> isTrunkCapacityOverX = d -> d.getDimensions()
                 .stream()
                 .anyMatch(t -> t.getTrunkCapacity() > trunkCapacity);
         return allCars.stream()
-                .filter(isProducerY)
+                .filter(isProducerX)
                 .filter(Car::isAutomaticGear)
                 .filter(isTrunkCapacityOverX)
                 .collect(Collectors.toList());
