@@ -43,6 +43,9 @@ public class Car {
     }
 
     public static void printAllCarData(List<Car> cars) {
+        if (cars.isEmpty()) {
+            System.out.println("No data");
+        }
         for (Object car : cars) {
             System.out.println(car);
         }
